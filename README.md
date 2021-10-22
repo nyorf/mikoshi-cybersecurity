@@ -10,25 +10,17 @@ Everything is currently packaged by me (@nyorf), so you can look through my PKGB
 
 ## Install repository to your Arch Linux (or any Arch-based) distro
 
-I will write a one-click install script eventually, but for now — here's how you can add this repository to your pacman package manager:
+I will write a one-click install script eventually, but for now — here's how you can add this repository to your pacman instance:
 
-**import key to pacman's GPG trust.db**
+**install mikoshi keyring package**
 
-    sudo pacman-key --recv-keys 3E57BAFEADD3EAC60D893CB6ECDA8403636A3FEB
+    curl -O https://raw.githubusercontent.com/nyorf/mikoshi-cybersecurity/master/x86_64/mikoshi-keyring-2021.10.22-2-x86_64.pkg.tar.zst && sudo pacman -U mikoshi-keyring-2021.10.22-2-x86_64.pkg.tar.zst
 
-**check if the key was actually added**
-
-    sudo pacman-key --finger 3E57BAFEADD3EAC60D893CB6ECDA8403636A3FEB
-
-**sign the key locally**
-
-    sudo pacman-key --lsign-key 3E57BAFEADD3EAC60D893CB6ECDA8403636A3FEB
-
-**install mirrorlist pkg**
+**install mikoshi mirrorlist package**
 
     curl -O https://raw.githubusercontent.com/nyorf/mikoshi-cybersecurity/master/x86_64/mikoshi-mirrorlist-2021.10.20-3-x86_64.pkg.tar.zst && sudo pacman -U mikoshi-mirrorlist-2021.10.20-3-x86_64.pkg.tar.zst
 
-**edit /etc/pacman.conf — add these lines after your last repository entry**
+**edit /etc/pacman.conf — add these lines to the end of file**
 
     [mikoshi-cybersecurity]
     SigLevel = Required DatabaseOptional
@@ -37,10 +29,6 @@ I will write a one-click install script eventually, but for now — here's how y
 **sync everything**
 
     sudo pacman -Syyu
-
-**install mikoshi-keyring**
-
-    sudo pacman -S mikoshi-keyring
 
 ## Post-install TODOs
 
