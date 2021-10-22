@@ -14,19 +14,19 @@ I will write a one-click install script eventually, but for now — here's how y
 
 **import key to pacman's GPG trust.db**
 
-    sudo pacman-key --recv-keys 27F15AF7A5D8BD074B88EC1078F62A59070BA3FE
+    sudo pacman-key --recv-keys 3E57BAFEADD3EAC60D893CB6ECDA8403636A3FEB
 
 **check if the key was actually added**
 
-    sudo pacman-key --finger 27F15AF7A5D8BD074B88EC1078F62A59070BA3FE
+    sudo pacman-key --finger 3E57BAFEADD3EAC60D893CB6ECDA8403636A3FEB
 
 **sign the key locally**
 
-    sudo pacman-key --lsign-key 27F15AF7A5D8BD074B88EC1078F62A59070BA3FE
+    sudo pacman-key --lsign-key 3E57BAFEADD3EAC60D893CB6ECDA8403636A3FEB
 
 **install mirrorlist pkg**
 
-    curl -O https://raw.githubusercontent.com/nyorf/mikoshi-cybersecurity/master/x86_64/mikoshi-mirrorlist-2021.10.20-2-x86_64.pkg.tar.zst && sudo pacman -U mikoshi-mirrorlist-2021.10.20-2-x86_64.pkg.tar.zst
+    curl -O https://raw.githubusercontent.com/nyorf/mikoshi-cybersecurity/master/x86_64/mikoshi-mirrorlist-2021.10.20-3-x86_64.pkg.tar.zst && sudo pacman -U mikoshi-mirrorlist-2021.10.20-3-x86_64.pkg.tar.zst
 
 **edit /etc/pacman.conf — add these lines after your last repository entry**
 
